@@ -23,6 +23,7 @@ import xyz.malefic.compose.nav.config.MalefiConfigLoader
 import xyz.malefic.compose.screens.App1
 import xyz.malefic.compose.screens.Home
 import xyz.malefic.ext.list.get
+import xyz.malefic.ext.precompose.gate
 import xyz.malefic.ext.stream.grass
 
 /**
@@ -33,13 +34,21 @@ import xyz.malefic.ext.stream.grass
  */
 fun main() =
     application {
-        NavWindow(onCloseRequest = ::exitApplication, title = "Compose Desktop Template") {
+        NavWindow(onCloseRequest = ::exitApplication, title = "Ice Cream's Calendar") {
             // Initialize the route manager
-            RouteManager.initialize(
-                composableMap,
-                grass("/routes.mcf")!!,
-                MalefiConfigLoader(),
-            )
+            RouteManager.initialize {
+                startup("home") {
+                    Home(navi)
+                }
+
+                dynamic("app1", hidden = true, "id", "name?") { params ->
+                    App1(params[0]!!, params[1, null])
+                }
+
+                dynamic("hidden", hidden = true, "text?") { params ->
+                    Heading1(text = params[0, "Nope."])
+                }
+            }
 
             // Determine the theme file path based on the system's theme (dark or light)
             val themeInputStream =
@@ -65,14 +74,3 @@ fun NavigationMenu() =
         Box(Modifier.fillMaxHeight().width(1.dp).background(MaterialTheme.colors.onBackground))
         RoutedNavHost()
     }
-
-/**
- * A map of composable functions used for routing. Each entry maps a route name to a composable
- * function that takes a list of parameters.
- */
-val composableMap: Map<String, @Composable (List<String?>) -> Unit> =
-    mapOf(
-        "App1" to { params -> App1(id = params[0]!!, name = params[1, null]) },
-        "Home" to { _ -> Home(navi) },
-        "Text" to { params -> Heading1(text = params[0, "Nope."]) },
-    )
