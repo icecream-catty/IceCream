@@ -34,5 +34,17 @@
   "surfaceContainerLow": "#1A1A1A",
   "surfaceContainer": "#262427",
   "surfaceContainerHigh": "#37343A",
-  "surfaceContainerHighest": "#4A464C"
+  "surfaceContainerHighest": "#4A464C",
+  "primaryFixed": "#BB86FC",
+  "onPrimaryFixed": "#21005D",
+  "primaryFixedDim": "#8856C8",
+  "onPrimaryFixedVariant": "#EADDFF",
+  "secondaryFixed": "#03DAC6",
+  "onSecondaryFixed": "#00201A",
+  "secondaryFixedDim": "#02A594",
+  "onSecondaryFixedVariant": "#CFFAF5",
+  "tertiaryFixed": "#03DAC6",
+  "onTertiaryFixed": "#00201A",
+  "tertiaryFixedDim": "#02A594",
+  "onTertiaryFixedVariant": "#CFFAF5"
 }

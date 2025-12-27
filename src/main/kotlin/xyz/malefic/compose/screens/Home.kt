@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import moe.tlaster.precompose.navigation.Navigator
 import xyz.malefic.compose.comps.box.BackgroundBox
-import xyz.malefic.compose.comps.text.typography.Body1
+import xyz.malefic.compose.comps.text.Body
 import xyz.malefic.ext.precompose.gate
 import xyz.malefic.ext.string.either
 
@@ -32,11 +32,13 @@ fun Home(navi: Navigator) {
             Spacer(Modifier.height(16.dp))
             TextButton(onClick = { navi gate "app1/123456" }) { Text("Go to App1") }
             Spacer(Modifier.height(16.dp))
-            TextButton(onClick = { navi gate "app1/123456/${name.ifEmpty { "Cat" }}" }) { Text("Go to App1 But With ${name.ifEmpty { "Cat" }}") }
+            TextButton(
+                onClick = { navi gate "app1/123456/${name.ifEmpty { "Cat" }}" },
+            ) { Text("Go to App1 But With ${name.ifEmpty { "Cat" }}") }
             Spacer(Modifier.height(16.dp))
             TextButton(onClick = { navi gate "hidden/boo!" }) { Text("Go to Hidden Page") }
             Spacer(Modifier.height(16.dp))
-            TextField(value = name, onValueChange = { name = it }, placeholder = { Body1(text = "Type Name Here!") })
+            TextField(value = name, onValueChange = { name = it }, placeholder = { Body(text = "Type Name Here!") })
         }
     }
 }

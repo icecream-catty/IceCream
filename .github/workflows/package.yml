@@ -304,7 +304,7 @@ jobs:
       - name: Create Full Release
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/ComposeDesktopTemplate-*/**/*
+          files: artifacts/IceCream-*/**/*
           name: "Release v${{ needs.increment-version.outputs.new_version }}"
           tag_name: "v${{ needs.increment-version.outputs.new_version }}"
           prerelease: false
@@ -319,7 +319,7 @@ jobs:
             Download the appropriate package for your operating system:
             - Windows: `.msi` file
             - macOS: `.dmg` file
-            - Linux: `.deb` file
+            - Linux: `AppImage` file
 
             ### Feedback
             Please report any issues or suggestions on the [GitHub Issues](https://github.com/${{ github.repository }}/issues) page.

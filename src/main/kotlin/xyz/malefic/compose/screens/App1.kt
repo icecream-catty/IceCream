@@ -12,7 +12,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import xyz.malefic.compose.comps.box.BackgroundBox
-import xyz.malefic.compose.comps.text.typography.Heading2
+import xyz.malefic.compose.comps.text.Headline
 import xyz.malefic.ext.any.resolveNull
 import xyz.malefic.ext.string.either
 
@@ -26,8 +26,8 @@ fun App1(
     BackgroundBox(contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = CenterHorizontally, verticalArrangement = Arrangement.Center) {
             TextButton(onClick = { text = text.either("Hello, World!", "Hello, Desktop!") }) { Text(text) }
-            Heading2("ID: $id")
-            Heading2(name.resolveNull("Name: $name", "Unnamed"))
+            Headline("ID: $id")
+            Headline(name.resolveNull("Name: $name", "Unnamed"))
         }
     }
 }

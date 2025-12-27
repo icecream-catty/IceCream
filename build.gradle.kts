@@ -1,4 +1,4 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Deb
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat.AppImage
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Dmg
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Msi
 
@@ -31,8 +31,8 @@ compose.desktop {
         mainClass = "xyz.malefic.compose.MainKt"
 
         nativeDistributions {
-            targetFormats(Dmg, Msi, Deb)
-            packageName = "ComposeDesktopTemplate"
+            targetFormats(Dmg, Msi, AppImage)
+            packageName = "IceCream"
             packageVersion = "1.0.0"
         }
     }
