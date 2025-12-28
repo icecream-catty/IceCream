@@ -218,7 +218,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         include:
           - os: ubuntu-latest
-            packageType: deb
+            packageType: AppImage
           - os: windows-latest
             packageType: msi
           - os: macos-latest

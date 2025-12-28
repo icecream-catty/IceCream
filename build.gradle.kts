@@ -51,4 +51,9 @@ tasks {
     check {
         dependsOn("installKotlinterPrePushHook")
     }
+    afterEvaluate {
+        named("packageDmg") {
+            dependsOn(named("packageAppImage"))
+        }
+    }
 }
