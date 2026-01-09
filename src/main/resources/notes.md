@@ -26,6 +26,7 @@ Main
   - var name by remember { mutableStateOf("Cat") }
   - TextField(value = name, onValueChange = { name = it })
 - $ : variable inside a string
+- !! : will pass stuff through (not null)
 
 Home.kt
 - app1 naming TextField function usage

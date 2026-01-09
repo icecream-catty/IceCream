@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat.AppImage
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Dmg
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Msi
 
@@ -24,6 +23,7 @@ dependencies {
     implementation(compose.desktop.currentOs)
     implementation(libs.bundles.malefic.ext)
     implementation(libs.precompose)
+    implementation(compose.material3)
 }
 
 compose.desktop {
@@ -31,7 +31,7 @@ compose.desktop {
         mainClass = "xyz.malefic.compose.MainKt"
 
         nativeDistributions {
-            targetFormats(Dmg, Msi, AppImage)
+            targetFormats(Dmg, Msi)
             packageName = "IceCream"
             packageVersion = "1.0.0"
         }
@@ -50,10 +50,5 @@ tasks {
     }
     check {
         dependsOn("installKotlinterPrePushHook")
-    }
-    afterEvaluate {
-        named("packageDmg") {
-            dependsOn(named("packageAppImage"))
-        }
     }
 }

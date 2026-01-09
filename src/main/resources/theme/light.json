@@ -1,6 +1,6 @@
 {
-  "primary": "#6200EE",
-  "onPrimary": "#FFFFFF",
+  "primary": "#FFB6CD",
+  "onPrimary": "#BB86FC",
   "primaryContainer": "#EADDFF",
   "onPrimaryContainer": "#21005D",
   "secondary": "#03DAC6",
@@ -21,7 +21,7 @@
   "onSurface": "#000000",
   "surfaceVariant": "#E7E0EB",
   "onSurfaceVariant": "#48454E",
-  "surfaceTint": "#6200EE",
+  "surfaceTint": "#FFB6CD",
   "outline": "#79747E",
   "outlineVariant": "#CFC7D5",
   "scrim": "#000000",
