@@ -5,9 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
-import androidx.compose.material.TextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,7 +29,9 @@ fun Home(navi: Navigator) {
 
     BackgroundBox(contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-            TextButton(onClick = { text = text.either("Hello, World 2!", "Hello, Desktop 2!")}) { Text(text, color = MaterialTheme.colorScheme.onPrimary) }
+            TextButton(onClick = {
+                text = text.either("Hello, World 2!", "Hello, Desktop 2!")
+            }) { Text(text, color = MaterialTheme.colorScheme.onPrimary) }
             Spacer(Modifier.height(16.dp))
             TextButton(onClick = { navi gate "app1/123456" }) { Text("Go to App1", color = MaterialTheme.colorScheme.onPrimary) }
             Spacer(Modifier.height(16.dp))
@@ -37,7 +39,7 @@ fun Home(navi: Navigator) {
                 onClick = { navi gate "app1/123456/${name.ifEmpty { "Cat" }}" },
             ) { Text("Go to App1 But With ${name.ifEmpty { "Cat" }}", color = MaterialTheme.colorScheme.onPrimary) }
             Spacer(Modifier.height(16.dp))
-            TextButton(onClick = { navi gate "hidden/boo!" }) { Text("Go to Hidden Page", color = MaterialTheme.colorScheme.onPrimary)}
+            TextButton(onClick = { navi gate "hidden/boo!" }) { Text("Go to Hidden Page", color = MaterialTheme.colorScheme.onPrimary) }
             Spacer(Modifier.height(16.dp))
             TextField(value = name, onValueChange = { name = it }, placeholder = { Body(text = "Type Name Here!") })
         }

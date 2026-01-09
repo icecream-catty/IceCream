@@ -26,6 +26,10 @@ dependencies {
     implementation(compose.material3)
 }
 
+configurations.all {
+    exclude(group = "androidx.compose.material", module = "material")
+}
+
 compose.desktop {
     application {
         mainClass = "xyz.malefic.compose.MainKt"
